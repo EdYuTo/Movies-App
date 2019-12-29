@@ -14,8 +14,7 @@ class MoviesListPresenter(_view: MoviesListContract.View): MoviesListContract.Pr
 
     override fun responseData(data: String) {
         val list = GsonBuilder().create().fromJson(data, Movies::class.java)
-        println(list)
-        view.updateView(list.toListString())
+        view.updateView(list.toListMap())
     }
 
     override fun requestData() {
@@ -42,6 +41,16 @@ class MoviesListPresenter(_view: MoviesListContract.View): MoviesListContract.Pr
         override fun toString(): String {
             return "id: $id\nvote_average: $vote_average\ntitle: $title\nposter_url: $poster_url\ngenres: ${genres.joinToString(", ")}\nrelease_date: $release_date"
         }
+        fun toMap(): Map<String, String> {
+            val map = mutableMapOf<String, String>()
+            map.put("id", id.toString())
+            map.put("vote_average", vote_average.toString())
+            map.put("title", title)
+            map.put("poster_url", poster_url)
+            map.put("genres", genres.joinToString(", "))
+            map.put("release_date", release_date)
+            return map
+        }
     }
 
     private class Movies(val movies: List<Movie>) {
@@ -54,6 +63,13 @@ class MoviesListPresenter(_view: MoviesListContract.View): MoviesListContract.Pr
                 list.add(it.toString())
             }
             return list
+        }
+        fun toListMap(): List<Map<String, String>> {
+            val listMap = mutableListOf<Map<String, String>>()
+            movies.forEach {
+                listMap.add(it.toMap())
+            }
+            return listMap
         }
     }
 }

@@ -6,7 +6,7 @@ interface MoviesListContract {
     }
     interface View {
         fun initView()
-        fun updateView(list: List<String>)
+        fun updateView(list: List<Map<String, String>>)
     }
     interface Presenter {
         fun responseData(data: String)
