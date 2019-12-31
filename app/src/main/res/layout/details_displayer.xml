@@ -1,6 +1,251 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content"
+    android:background="#f2f2f2"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/moviePoster"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:srcCompat="@android:color/background_light"
+        android:contentDescription="@string/image_description"/>
+
+    <TextView
+        android:id="@+id/movieTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:layout_gravity="center_horizontal"/>
+
+    <TextView
+        android:id="@+id/tagLine"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:layout_gravity="center_horizontal"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginStart="8dp"
+        android:text="@string/original_title"/>
+
+    <TextView
+        android:id="@+id/originalTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#e6e6e6"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
+        android:layout_marginBottom="8dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginStart="8dp"
+        android:text="@string/genres"/>
+
+    <TextView
+        android:id="@+id/movieGenres"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#e6e6e6"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
+        android:layout_marginBottom="8dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginStart="8dp"
+        android:text="@string/original_language"/>
+
+    <TextView
+        android:id="@+id/originalLanguage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#e6e6e6"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
+        android:layout_marginBottom="8dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginStart="8dp"
+        android:text="@string/release_date"/>
+
+    <TextView
+        android:id="@+id/movieRelease"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#e6e6e6"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
+        android:layout_marginBottom="8dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginStart="8dp"
+        android:text="@string/runtime"/>
+
+    <TextView
+        android:id="@+id/runTime"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#e6e6e6"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
+        android:layout_marginBottom="8dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginStart="8dp"
+        android:text="@string/overview"/>
+
+    <TextView
+        android:id="@+id/movieOverview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#e6e6e6"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:layout_gravity="center_horizontal"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginStart="8dp"
+        android:text="@string/languages"/>
+
+    <TextView
+        android:id="@+id/otherLanguages"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#e6e6e6"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
+        android:layout_marginBottom="8dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginStart="8dp"
+        android:text="@string/collection"/>
+
+    <ImageView
+        android:id="@+id/collectionPoster"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="#e6e6e6"
+        app:srcCompat="@android:color/background_light"
+        android:contentDescription="@string/image_description"/>
+
+    <TextView
+        android:id="@+id/movieCollection"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#e6e6e6"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:gravity="center_horizontal"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginStart="8dp"
+        android:text="@string/production_companies"/>
+
+    <TextView
+        android:id="@+id/productionCompanies"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#e6e6e6"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:layout_gravity="center_horizontal"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginStart="8dp"
+        android:text="@string/production_countries"/>
+
+    <TextView
+        android:id="@+id/productionCountries"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#e6e6e6"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:layout_gravity="center_horizontal"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginStart="8dp"
+        android:text="@string/revenue"/>
+
+    <TextView
+        android:id="@+id/revenue"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#e6e6e6"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
+        android:layout_marginBottom="8dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginStart="8dp"
+        android:text="@string/imdb"/>
+
+    <TextView
+        android:id="@+id/imdb"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#e6e6e6"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:autoLink="web"/>
 
 </LinearLayout>

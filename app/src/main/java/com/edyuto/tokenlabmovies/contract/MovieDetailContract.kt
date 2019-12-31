@@ -6,7 +6,7 @@ interface MovieDetailContract {
     }
     interface View {
         fun initView()
-        fun updateView(list: String)
+        fun updateView()
     }
     interface Presenter {
         fun responseData(data: String)
