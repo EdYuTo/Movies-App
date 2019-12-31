@@ -43,26 +43,31 @@ class MoviesList : AppCompatActivity(), MoviesListContract.View {
         private var moviesList = _moviesList
 
         override fun getItemCount(): Int {
-            return moviesList.size
+            return if(moviesList.isEmpty()) 1 else moviesList.size
         }
 
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CustomViewHolder {
+            if (moviesList.isEmpty()) {
+                return CustomViewHolder(LayoutInflater.from(context).inflate(R.layout.loading, parent, false))
+            }
             val layoutInflater = LayoutInflater.from(context)
             val singleLine = layoutInflater.inflate(R.layout.movie_displayer, parent, false)
             return CustomViewHolder(singleLine)
         }
 
         override fun onBindViewHolder(holder: CustomViewHolder, position: Int) {
-            Picasso.get().load(moviesList[position].get("poster_url")).into(holder.view.moviePoster)
-            holder.view.movieTitle.text = "Title: " + moviesList[position].get("title")
-            holder.view.movieGenres.text = "Genres: " + moviesList[position].get("genres")
-            holder.view.movieRelease.text = "Release date: " + moviesList[position].get("release_date")
-            holder.view.setOnClickListener {
-                val intent = Intent(context, MovieDetail::class.java)
-                val bundle = Bundle()
-                bundle.putString("id", moviesList[position].get("id"))
-                intent.putExtras(bundle)
-                startActivity(context, intent, null)
+            if (!moviesList.isEmpty()) {
+                Picasso.get().load(moviesList[position].get("poster_url")).into(holder.view.moviePoster)
+                holder.view.movieTitle.text = "Title: " + moviesList[position].get("title")
+                holder.view.movieGenres.text = "Genres: " + moviesList[position].get("genres")
+                holder.view.movieRelease.text = "Release date: " + moviesList[position].get("release_date")
+                holder.view.setOnClickListener {
+                    val intent = Intent(context, MovieDetail::class.java)
+                    val bundle = Bundle()
+                    bundle.putString("id", moviesList[position].get("id"))
+                    intent.putExtras(bundle)
+                    startActivity(context, intent, null)
+                }
             }
         }
     }

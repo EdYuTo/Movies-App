@@ -42,10 +42,13 @@ class MovieDetail: AppCompatActivity(), MovieDetailContract.View {
         private val context = _context
 
         override fun getItemCount(): Int {
-            return if (movieDetails != null) 1 else 0
+            return 1
         }
 
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CustomViewHolder {
+            if (movieDetails == null) {
+                return CustomViewHolder(LayoutInflater.from(context).inflate(R.layout.loading, parent, false))
+            }
             val layoutInflater = LayoutInflater.from(context).inflate(R.layout.details_displayer, parent, false)
             return CustomViewHolder(layoutInflater)
         }
