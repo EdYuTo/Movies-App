@@ -8,4 +8,9 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <!-- Progress bar color. -->
+    <style name="progressBarStyle" parent="@style/Theme.AppCompat">
+        <item name="colorAccent">#8c8c8c</item>
+    </style>
+
 </resources>
